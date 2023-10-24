@@ -1,0 +1,123 @@
+:root {
+    --stroke-width: 2px;
+    --inner-square-width: 20px;
+    --outer-square-width: calc(var(--inner-square-width) + calc(var(--stroke-width)*2));
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #202020;
+    display: grid;
+    place-content: center;
+    position: relative;
+    user-select: none;
+}
+
+#app {
+    --bkp-1: var(--stroke-width);
+    --bkp-2: var(--inner-square-width);
+    --bkp-3: var(--outer-square-width);
+    background-color: #131313;
+    background-image: linear-gradient(#000 0px, #000 var(--bkp-1), #fff0 var(--bkp-1), #fff0 var(--bkp-2), #fff0 var(--bkp-2), #fff0 var(--bkp-3)), linear-gradient(90deg, #000 0px, #000 var(--bkp-1), #fff0 var(--bkp-1), #fff0 var(--bkp-2), #fff0 var(--bkp-2), #fff0 var(--bkp-3));
+    background-size: var(--outer-square-width) var(--outer-square-width), var(--outer-square-width) var(--outer-square-width);
+    background-position: -1px -1px, -1px -1px;
+    background-repeat: repeat, repeat;
+    position: relative;
+}
+
+#app::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: var(--outer-square-width);
+    background-color: #888;
+    background-image: linear-gradient(#202020 0px, #202020 2px, #fff0 2px, #fff0 var(--bkp-2), #fff0 var(--bkp-2), #fff0 var(--bkp-3)), linear-gradient(90deg, #202020 0px, #202020 2px, #fff0 2px, #fff0 var(--bkp-2), #fff0 var(--bkp-2), #fff0 var(--bkp-3));
+    background-size: var(--outer-square-width) var(--outer-square-width), var(--outer-square-width) var(--outer-square-width);
+    background-position: -1px -1px, -1px -1px;
+    background-repeat: repeat, repeat;
+    position: absolute;
+    top: calc(var(--outer-square-width) * -1);
+    left: calc(var(--outer-square-width) * -1);
+    z-index: -1;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 2rem;
+    color: white;
+}
+
+h2 {
+    margin: 0;
+}
+
+.info {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.info h2 {
+    font-size: 1.5rem;
+}
+
+.info span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.center {
+    display: block;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #202020;
+    color: white;
+    padding: 1rem;
+    gap: .5rem;
+    border: 1rem #888 solid;
+    box-shadow: 0 0 10px #000;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 3rem;
+}
+
+.modal-score {
+    font-size: 2rem;
+}
+
+.modal-span {
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width: 500px){
+    .desktop-controls {
+        display: none;
+    }
+    .sidebar {
+        top: 0;
+        left: 0;
+        font-size: 1rem;
+        padding: 5px;
+        width: max-content;
+    }
+}

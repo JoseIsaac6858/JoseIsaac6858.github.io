@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Tetris</title>
+</head>
+
+<body>
+    <div id="app">
+        <canvas>
+
+        </canvas>
+    </div>
+    <div class="modal" id="modal-cover">
+        <h2>presiona S para empezar</h2>
+    </div>
+    <div class="modal" id="modal-endgame">
+        <h2 class="modal-title">¡¡Fin del juego!!</h2>
+        <span class="modal-score">Tú puntuación: <b id="modal-endgame-score">0</b></span>
+        <span class="modal-span">Press S to restart</span>
+    </div>
+    <div class="sidebar">
+        <section>
+            <div class="info">
+                <h2>Score:</h2>
+                <span id="score">0</span>
+            </div>
+            <div class="info">
+                <h2>Record:</h2>
+                <span id="record">0</span>
+            </div>
+            <div class="desktop-controls">
+                <span class="center">Controles</span>
+                <div class="info">
+                    <h2>Izquierda:</h2>
+                    <span>izquierda</span>
+                </div>
+                <div class="info">
+                    <h2>Derecha:</h2>
+                    <span>derecha</span>
+                </div>
+                <div class="info">
+                    <h2>Abajo:</h2>
+                    <span>abajo</span>
+                </div>
+                <div class="info">
+                    <h2>Arriba:</h2>
+                    <span>girar</span>
+                </div>
+                <div class="info">
+                    <h2>S:</h2>
+                    <span>detener/continuar</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
